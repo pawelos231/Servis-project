@@ -5,7 +5,7 @@ const News = require("../models/news");
 /* GET home page. */
 router.get("/", (req, res) => {
   const search = req.query.search || "";
-  const sort = req.query.sort || -1;
+  let sort = req.query.sort || -1;
   if (sort !== -1 || sort !== 1) {
     sort = -1;
   }
