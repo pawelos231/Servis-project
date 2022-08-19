@@ -39,7 +39,7 @@ app.use(
     keys: config.keySession,
 
     // Cookie Options
-    maxAge: config.MaxAgeSession, // max czas przechowywania cookie
+    maxAge: config.MaxAgeSession,
   })
 );
 
@@ -68,6 +68,9 @@ app.use(function (err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render("error");
+});
+var listener = app.listen(8001, function () {
+  console.log("Listening on port " + listener.address().port);
 });
 
 module.exports = app;

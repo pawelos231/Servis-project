@@ -5,7 +5,7 @@ const password = "123";
 
 /* GET home page. */
 router.get("/", (req, res) => {
-  res.render("index", { title: "niger" });
+  res.render("index", { title: "bruh" });
 });
 
 router.get("/login", (req, res) => {
@@ -18,7 +18,6 @@ router.post("/login", (req, res) => {
     req.session.admin = 1;
     res.redirect("/admin");
   } else {
-    console.log(req.body);
     res.redirect("/login");
   }
 });

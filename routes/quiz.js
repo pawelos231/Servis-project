@@ -5,13 +5,17 @@ const Quiz = require("../models/quiz");
 /* GET home page. */
 router.get("/", (req, res) => {
   const show = !req.session.vote;
-  console.log(show);
   Quiz.find({}, (err, data) => {
     let sum = 0;
     data.forEach((item) => {
       sum += item.vote;
     });
-    res.render("quiz", { title: "Quiz", data, show, sum });
+    res.render("quiz", {
+      title: "Quiz",
+      data: ["jesień", "lato", "zima", "gónwo"],
+      show,
+      sum,
+    });
   });
 });
 

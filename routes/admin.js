@@ -3,7 +3,7 @@ const router = express.Router();
 const News = require("../models/news");
 router.all("*", (req, res, next) => {
   if (!req.session.admin) {
-    res.redirect("login"); //jezeli admin nie jest zalogowany przekieruj go na login, tak zeby nie mogl wejść do panelu admina
+    res.redirect("login");
     return;
   }
   next();
